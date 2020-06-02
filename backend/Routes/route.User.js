@@ -42,7 +42,7 @@ router.post('/authenticate', (req, res, next) => {
                 });
 
                 res.json({
-                    sucess : true,
+                    Success : true,
                     token: 'jwt '+token,
                     user:{
                         id: user.id,
@@ -55,7 +55,7 @@ router.post('/authenticate', (req, res, next) => {
             }
             else{
                 return res.json({
-                    success:false,
+                    Success:false,
                     msg:"Wrong password"
                 })
             }
