@@ -23,14 +23,12 @@ module.exports.getUserByUsername = function(username, callback){
 }
 
 module.exports.addUser = function(newUser, callback){
-    console.log(newUser)
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
             if(err) throw err;
             newUser.password = hash;
             CounterCollection.increment(newUser.role)
                 .then((counter, err) => {
-                    console.log(counter)
                     newUser.SRN = newUser.role.slice(0,3).toUpperCase() + counter.amount.toString()
                     newUser.save(callback);
                 })

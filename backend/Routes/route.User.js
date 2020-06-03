@@ -13,7 +13,6 @@ router.post('/register', (req, res, next) => {
         password    :   req.body.password,
         role        :   req.body.role
     });
-    console.log(newUser);
     User.addUser(newUser, (err, user) => {
         if(err){
             res.json({Success : false, msg : "Failed to create User", user : user});
