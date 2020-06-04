@@ -13,12 +13,11 @@ router.post('/register', (req, res, next) => {
         password    :   req.body.password,
         role        :   req.body.role
     });
-
     User.addUser(newUser, (err, user) => {
         if(err){
-            res.json({Success : false, msg : "Failed to create User", user : newUser});
+            res.json({Success : false, msg : "Failed to create User", user : user});
         }else{
-            res.json({Success : true, msg : "User created succesfully", user : newUser});
+            res.json({Success : true, msg : "User created succesfully", user : user});
         }
     });
 });
@@ -42,7 +41,7 @@ router.post('/authenticate', (req, res, next) => {
                 });
 
                 res.json({
-                    sucess : true,
+                    Success : true,
                     token: 'jwt '+token,
                     user:{
                         id: user.id,
@@ -55,7 +54,7 @@ router.post('/authenticate', (req, res, next) => {
             }
             else{
                 return res.json({
-                    success:false,
+                    Success:false,
                     msg:"Wrong password"
                 })
             }

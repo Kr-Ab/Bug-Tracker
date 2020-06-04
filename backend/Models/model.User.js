@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 const bcrypt    = require("bcryptjs");
+const CounterCollection = require("./model.CounterCollection")
 
 const UserSchema = mongoose.Schema({
+    SRN         :   { type : String , unique : true},
     name        :   { type : String },
     email       :   { type : String , required : true, unique : true},
     username    :   { type : String , required : true, unique : true},
@@ -25,7 +27,11 @@ module.exports.addUser = function(newUser, callback){
         bcrypt.hash(newUser.password, salt, (err, hash) => {
             if(err) throw err;
             newUser.password = hash;
-            newUser.save(callback);
+            CounterCollection.increment(newUser.role)
+                .then((counter, err) => {
+                    newUser.SRN = newUser.role.slice(0,3).toUpperCase() + counter.amount.toString()
+                    newUser.save(callback);
+                })
         });
     });
 }
