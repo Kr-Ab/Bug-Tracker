@@ -37,7 +37,7 @@ router.post('/authenticate', (req, res, next) => {
             if(err) throw err;
             if(isMatch){
                 const token = jwt.sign({data: user.username}, process.env.key, {
-                    expiresIn : 3600 // 1 hr
+                    expiresIn : 60 // 1 hr
                 });
 
                 res.json({
@@ -65,6 +65,12 @@ router.post('/authenticate', (req, res, next) => {
 //Get Profile only when session is valid
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
     res.json({user : req.user})
+});
+
+router.get('/test', (req, res, next) => {
+    User.count().then(count => {  
+        console.log(count);
+    });
 });
 
 module.exports = router;
