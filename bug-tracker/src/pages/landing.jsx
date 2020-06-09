@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import LoginPage from '../Components/login/loginPage'
+import LoginPage from '../Components/login/LoginPage'
 import Register from '../Components/register/register'
 import Loading from '../Components/loading/loading'
 import Demo from '../Components/demo/demo'
