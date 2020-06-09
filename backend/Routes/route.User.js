@@ -13,12 +13,11 @@ router.post('/register', (req, res, next) => {
         password    :   req.body.password,
         role        :   req.body.role
     });
-
     User.addUser(newUser, (err, user) => {
         if(err){
-            res.json({Success : false, msg : "Failed to create User", user : newUser});
+            res.json({Success : false, msg : "Failed to create User", user : user});
         }else{
-            res.json({Success : true, msg : "User created succesfully", user : newUser});
+            res.json({Success : true, msg : "User created succesfully", user : user});
         }
     });
 });
@@ -38,11 +37,11 @@ router.post('/authenticate', (req, res, next) => {
             if(err) throw err;
             if(isMatch){
                 const token = jwt.sign({data: user.username}, process.env.key, {
-                    expiresIn : 3600 // 1 hr
+                    expiresIn : 60 // 1 hr
                 });
 
                 res.json({
-                    sucess : true,
+                    Success : true,
                     token: 'jwt '+token,
                     user:{
                         id: user.id,
@@ -55,7 +54,7 @@ router.post('/authenticate', (req, res, next) => {
             }
             else{
                 return res.json({
-                    success:false,
+                    Success:false,
                     msg:"Wrong password"
                 })
             }
@@ -66,6 +65,12 @@ router.post('/authenticate', (req, res, next) => {
 //Get Profile only when session is valid
 router.get('/profile', passport.authenticate('jwt', {session:false}), (req, res, next) => {
     res.json({user : req.user})
+});
+
+router.get('/test', (req, res, next) => {
+    User.count().then(count => {  
+        console.log(count);
+    });
 });
 
 module.exports = router;
