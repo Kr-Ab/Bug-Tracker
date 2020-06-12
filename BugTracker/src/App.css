@@ -1,0 +1,27 @@
+#tbody tr,
+#tbody tr td {
+  padding: 0;
+  margin: 0;
+}
+
+.form-control:focus,
+.bmd-form-group.is-focused .form-control {
+  background-size: 0% 30%, 100% 100%;
+  transition-duration: 0.3s;
+  border-bottom: 1px solid #828283 !important;
+}
+
+.optionDanger {
+  appearance: none;
+
+  background-color: #007700 !important;
+}
+
+.spinner {
+  width: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}

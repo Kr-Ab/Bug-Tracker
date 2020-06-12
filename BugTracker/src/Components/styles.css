@@ -1,0 +1,29 @@
+.errorValidation {
+  color: #bf1650;
+}
+
+.errorValidation ::before {
+  display: inline;
+  content: "⚠ ";
+}
+
+.sidebar {
+  z-index: 15;
+}
+.navbar {
+  z-index: 15;
+}
+
+.navbartracker {
+  position: relative !important;
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+}
+
+/* .pagination {
+  background-color: wheat;
+} */
+.navbar-form {
+  display: none;
+}
