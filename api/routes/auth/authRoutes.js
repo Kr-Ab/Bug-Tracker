@@ -14,7 +14,7 @@ const router = require("express").Router();
 var bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const verify = require("./verifyToken");
-// ------------------------LOGIN AND REGISTRO-------------------------->
+// ------------------------LOGIN AND REGISTER-------------------------->
 router.post("/login", (req, res) => __awaiter(this, void 0, void 0, function* () {
     try {
         const objContext = {

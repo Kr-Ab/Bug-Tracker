@@ -19,7 +19,7 @@ const projectSubmitterRoutes = require("./routes/submitter/projectRoutes");
 const ticketSubmitterRoutes = require("./routes/submitter/ticketRoutes");
 const authRoutes = require("./routes/auth/authRoutes");
 
-let puerto = process.env.PORT || 3000;
+let port = process.env.PORT || 3000;
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("connected to db"));
 
 app.use(cors());
@@ -37,4 +37,4 @@ app.use("/api/manager/ticket", ticketManagerRoutes);
 app.use("/api/global/account", accountGlobalRoutes);
 app.use("/api/global/project", projectGlobalRoutes);
 app.use("/api/global/ticket", ticketGlobalRoutes);
-app.listen(puerto, () => console.log("server Up and running: " + puerto));
+app.listen(port, () => console.log("server Up and running: " + port));
