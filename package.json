@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node api/index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "cd BugTracker && npm run build",
+    "install" : "cd BugTracker && npm install",
+    "heroku-postbuild" : "npm run install && npm run build",
+    "client" : "cd BugTracker && npm start"
   },
   "keywords": [],
   "author": "",

@@ -37,4 +37,10 @@ app.use("/api/manager/ticket", ticketManagerRoutes);
 app.use("/api/global/account", accountGlobalRoutes);
 app.use("/api/global/project", projectGlobalRoutes);
 app.use("/api/global/ticket", ticketGlobalRoutes);
+
+if (process.env.NODE_ENV === 'production')
+{
+    app.use(express.static('../BugTracker/build'));
+}
+
 app.listen(port, () => console.log("server Up and running: " + port));
