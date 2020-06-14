@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build" : "cd BugTracker && npm run build",
     "install" : "cd BugTracker && npm install",
-    "heroku-postbuild" : "npm run install && npm run build",
+    "heroku-postbuild" : "npm run install && npm run build && npm run client",
     "client" : "cd BugTracker && npm start"
   },
   "keywords": [],

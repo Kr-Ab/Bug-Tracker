@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require("path");
 const accountGlobalRoutes = require("./routes/global/accountRoutes");
 const projectGlobalRoutes = require("./routes/global/projectRoutes");
 const ticketGlobalRoutes = require("./routes/global/ticketRoutes");
@@ -19,8 +20,8 @@ const projectSubmitterRoutes = require("./routes/submitter/projectRoutes");
 const ticketSubmitterRoutes = require("./routes/submitter/ticketRoutes");
 const authRoutes = require("./routes/auth/authRoutes");
 
-let port = process.env.PORT || 3000;
-mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("connected to db"));
+let port = process.env.PORT || 5000;
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log("connected to db"));
 
 app.use(cors());
 app.use(express.json());
