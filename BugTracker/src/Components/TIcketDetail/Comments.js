@@ -170,7 +170,7 @@ export function Comments({ props, commentsDetail, setCommentsDetail }) {
                     <tr key={index}>
                       <td>{comment.commenterName}</td>
                       <td> {comment.message}</td>
-                      <td> {new Date(comment.createAt).toISOString}</td>
+                      <td> {comment.createAt}</td>
                     </tr>
                   );
                 })}

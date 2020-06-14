@@ -19,6 +19,6 @@ exports.commentSchema = new mongoose.Schema({
         type: String
     },
     createAt: {
-        type: Date
+        type: String
     }
 });
