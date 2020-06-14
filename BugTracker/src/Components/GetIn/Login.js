@@ -111,14 +111,14 @@ export default function Login({ setIsLogginActive }) {
           )}
         </div>
 
-        <button type="submit" className="btn btn-danger btn-block my-4">
+        <button type="submit" className="btn btn-success btn-block my-4">
           {("Login")}
         </button>
 
         <p className="font-italic text-dark d-flex justify-content-end">
           {("Create an account")}-
           <a
-            className=" border-bottom text-danger font-weight-bold "
+            className=" border-bottom text-success font-weight-bold "
             onClick={() => {
               setIsLogginActive("register");
             }}
@@ -129,7 +129,7 @@ export default function Login({ setIsLogginActive }) {
         <p className="font-italic text-dark d-flex justify-content-end">
           {("Sign In As")}-
           <a
-            className=" border-bottom text-danger font-weight-bold  "
+            className=" border-bottom text-success font-weight-bold  "
             onClick={() => {
               setIsLogginActive("demouser");
             }}

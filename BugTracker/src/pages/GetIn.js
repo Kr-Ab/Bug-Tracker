@@ -35,7 +35,7 @@ export default () => {
 };
 
 const BackgroundStyle = styled.div`
-  background-image: linear-gradient(to top, #ce4f4f 0%, #d40000 100%);
+  background-image: linear-gradient(to top, #B9F6CA 0%, #1DE9B6 100%);
   width: 100%;
   height: 100%;
   position: absolute !important;

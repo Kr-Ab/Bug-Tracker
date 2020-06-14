@@ -137,7 +137,7 @@ export default function DemoUser({ isLogginActive, setIsLogginActive }) {
         <p className="font-italic text-dark align-self-center">
           {("Have an account")}-
           <a
-            className=" border-bottom text-danger font-weight-bold  "
+            className=" border-bottom text-success font-weight-bold  "
             onClick={() => {
               setIsLogginActive("login");
             }}

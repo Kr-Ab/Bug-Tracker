@@ -114,7 +114,7 @@ export default function Register({ isLogginActive, setIsLogginActive }) {
           )}
         </div>
 
-        <button type="submit" className="btn btn-danger btn-block mb-4 ">
+        <button type="submit" className="btn btn-success btn-block mb-4 ">
           {("Sign In")}
         </button>
 
@@ -124,7 +124,7 @@ export default function Register({ isLogginActive, setIsLogginActive }) {
             onClick={() => {
               setIsLogginActive("login");
             }}
-            className=" border-bottom text-danger font-weight-bold  "
+            className=" border-bottom text-success font-weight-bold  "
           >
             {("Login")}
           </a>
