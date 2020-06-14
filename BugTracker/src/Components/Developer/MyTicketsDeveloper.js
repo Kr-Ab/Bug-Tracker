@@ -33,7 +33,7 @@ export default function MyTicketsDeveloper() {
             console.log(error);
           }
         } else {
-          console.log("error pe chino");
+          console.log("error");
         }
       });
   }, []);
@@ -136,7 +136,6 @@ export default function MyTicketsDeveloper() {
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, listTickets));
     console.log(searchedWord);
   }, [searchedWord]);
@@ -249,9 +248,9 @@ export default function MyTicketsDeveloper() {
                                   className={
                                     "optionDanger list-group-item list-group-item-action  b "
                                   }
-                                  value="informado"
+                                  value="informed"
                                 >
-                                  {("Informado")}
+                                  {("Informed")}
                                 </option>
                                 <option
                                   className={

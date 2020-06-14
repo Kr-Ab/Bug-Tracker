@@ -51,7 +51,6 @@ export function Table({ filteredArray }) {
   //////////////////////////////////////////////////////
   const onDeleteAssignedProject = (projectId, personalId) => {
     // personalId
-    console.log("data enviada");
     console.log(projectId);
     console.log(personalId);
 
@@ -60,7 +59,7 @@ export function Table({ filteredArray }) {
       text: "You won' be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#4caf50",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
     }).then(result => {
@@ -116,7 +115,7 @@ export function Table({ filteredArray }) {
                           <span className="ml-3">
                             <button
                               type="button"
-                              className="btn btn-danger btn-sm"
+                              className="btn btn-warning btn-sm"
                               onClick={() => {
                                 onDeleteAssignedProject(project.id, person._id);
                               }}

@@ -10,7 +10,7 @@ export function CardProjects() {
   const [filteredArray, setFilteredArray] = useState([]);
   return (
     <Fade className="card">
-      <div className="card-header card-header-info">
+      <div className="card-header card-header-danger">
         <h4 className="card-title ">{("Your Projects")} </h4>
         <p className="card-category">
           {("All your projects in your database")}

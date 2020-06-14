@@ -28,22 +28,11 @@ export default props => {
         console.log(error);
       });
   }, []);
-
-  // const initialFormState = {
-  //   name: "",
-  //   // submitter: "", //toma al admin no al submiter por ahora
-  //   description: "",
-  //   status: "",
-  //   type: "",
-  //   priority: "",
-  //   imageDescription: "",
-  //   file: {}
-  // };
   const [ticketToEdit, setTicketToEdit] = useState({});
 
   const handleInputChange = event => {
     const { name, value } = event.target;
-    setTicketToEdit({ ...ticketToEdit, [name]: value }); //anade el name y surname mas al adduser
+    setTicketToEdit({ ...ticketToEdit, [name]: value });
     console.log(ticketToEdit);
   };
 
@@ -81,11 +70,9 @@ export default props => {
       <div className="content">
         <div className="container-fluid">
           <div className="row">
-            {/* LAYOUT */}
-            {/* YOUR CONTENT  */}
             <div class="col-md-8">
               <div class="card">
-                <div class="card-header card-header-info">
+                <div class="card-header card-header-success">
                   <h4 class="card-title ">{("Edit Ticket")} </h4>
                   <button
                     onClick={onNavigateToTickets}
@@ -95,7 +82,6 @@ export default props => {
 
                     {("Back to list")}
                   </button>
-                  {/* <p class="card-category">Change Ticket Properties</p> */}
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -166,8 +152,8 @@ export default props => {
                               onChange={handleInputChange}
                               className="w-100 custom-select"
                             >
-                              <option value="informado">
-                                {("Informado")}
+                              <option value="informed">
+                                {("Informed")}
                               </option>
                               <option value="inprogress">
                                 {("In Progress")}
@@ -203,7 +189,7 @@ export default props => {
                         <button
                           type="button"
                           onClick={onUpdateTicket}
-                          class="btn btn-warning"
+                          class="btn btn-info"
                         >
                           {("Update Ticket")}
                         </button>

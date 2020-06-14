@@ -44,7 +44,6 @@ export function Historial({ historiesDetail, setHistoriesDetail }) {
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, historiesDetail));
     console.log(searchedWord);
   }, [searchedWord]);
@@ -72,15 +71,15 @@ export function Historial({ historiesDetail, setHistoriesDetail }) {
   //////////////////////////////////////////////////////
 
   return (
-    <Fade class="card">
-      <div class="card-header card-header-info">
-        <h4 class="card-title "> {("Tickets History")} </h4>
-        <p class="card-category">
+    <Fade className="card">
+      <div className="card-header card-header-success">
+        <h4 className="card-title "> {("Tickets History")} </h4>
+        <p className="card-category">
           {("All history information for this ticket")}
         </p>
       </div>
-      <div class="card-body">
-        <div class="table-responsive">
+      <div className="card-body">
+        <div className="table-responsive">
           {/* ///////////////////Search/////////////////////////// */}
           <div className="input-group no-border w-100  d-flex flex-row-reverse">
             <div className="input-group no-border w-50  ">
@@ -93,16 +92,16 @@ export function Historial({ historiesDetail, setHistoriesDetail }) {
               />
               <button
                 type="submit"
-                class="btn btn-white btn-round btn-just-icon"
+                className="btn btn-white btn-round btn-just-icon"
               >
-                <i class="material-icons">search</i>
-                <div class="ripple-container"></div>
+                <i className="material-icons">search</i>
+                <div className="ripple-container"></div>
               </button>
             </div>
           </div>
           {/* ///////////////////Search/////////////////////////// */}
-          <table class="table ">
-            <thead class=" ">
+          <table className="table ">
+            <thead className=" ">
               <tr>
                 <th className="font-weight-bold">{("Property")}</th>
                 <th className="font-weight-bold">{("Old Value")}</th>

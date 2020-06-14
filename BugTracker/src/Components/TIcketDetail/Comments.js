@@ -45,7 +45,6 @@ export function Comments({ props, commentsDetail, setCommentsDetail }) {
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, commentsDetail));
     console.log(searchedWord);
   }, [searchedWord]);
@@ -95,7 +94,6 @@ export function Comments({ props, commentsDetail, setCommentsDetail }) {
         }
       )
       .then(function(res) {
-        // me llega los detalles de ONE Proyecto
         Toast.fire({
           icon: "success",
           title: "Added comments with success"
@@ -106,7 +104,7 @@ export function Comments({ props, commentsDetail, setCommentsDetail }) {
       .catch(function(error) {
         Toast.fire({
           icon: "error",
-          title: "Erro! to add comment "
+          title: "Error! to add comment "
         });
         console.log(error);
       });
@@ -117,7 +115,7 @@ export function Comments({ props, commentsDetail, setCommentsDetail }) {
         <h4> {("Add a comment")}?</h4>
         <textarea
           required={true}
-          rows="4"
+          rows="1"
           cols="50"
           className="form-control  mb-4"
           value={message}
@@ -125,12 +123,12 @@ export function Comments({ props, commentsDetail, setCommentsDetail }) {
           type="text"
           placeholder="Your commnets goes here"
         ></textarea>
-        <button onClick={onSendComment} className="btn btn-warning">
+        <button onClick={onSendComment} className="btn btn-info">
           {("Add")}
         </button>
       </div>
       <div className="card">
-        <div className="card-header card-header-info">
+        <div className="card-header card-header-success">
           <h6 className="card-title ">{("Tickets Comments")}</h6>
           <p className="card-category">
             {("All your cooments for this tickets")}

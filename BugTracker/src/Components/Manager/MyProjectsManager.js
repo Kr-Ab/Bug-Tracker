@@ -30,7 +30,7 @@ export default function MyProjectsManager() {
             console.log(error);
           }
         } else {
-          console.log("error pe chino");
+          console.log("error");
         }
       });
   }, []);
@@ -69,7 +69,6 @@ export default function MyProjectsManager() {
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, listProjects));
     console.log(searchedWord);
   }, [searchedWord]);
@@ -101,7 +100,7 @@ export default function MyProjectsManager() {
       <div className="content">
         <div className="container-fluid">
           <div class="card">
-            <div class="card-header card-header-info">
+            <div class="card-header card-header-success">
               <h4 class="card-title ">{("Your Projects")} </h4>
               <p class="card-category">
                 {("All your projects in your database")}

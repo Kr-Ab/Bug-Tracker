@@ -31,7 +31,7 @@ export default function MyTicketsSubmitter() {
             console.log(error);
           }
         } else {
-          console.log("error pe chino");
+          console.log("error");
         }
       });
   }, []);
@@ -119,7 +119,7 @@ export default function MyTicketsSubmitter() {
           <hr />
 
           <div class="card">
-            <div class="card-header card-header-info">
+            <div class="card-header card-header-warning">
               <h4 class="card-title ">{("Your Tickets")}</h4>
               <p class="card-category">
                 {("All your Tickets in your database")}

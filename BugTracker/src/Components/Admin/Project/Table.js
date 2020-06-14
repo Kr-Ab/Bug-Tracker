@@ -32,7 +32,6 @@ export function Table({ filteredArray }) {
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
-  // const totalPersonel = myPersonel.length;
 
   const pageNumbers = [];
 
@@ -63,7 +62,7 @@ export function Table({ filteredArray }) {
       text: "You won' be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#4caf50",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
     }).then(result => {
@@ -79,7 +78,6 @@ export function Table({ filteredArray }) {
           )
           .then(res => {
             if (res.request.status === 200) {
-              // me trae la lista de de proyectos
               console.log(res.data);
               setListProjects(res.data);
 
@@ -96,17 +94,15 @@ export function Table({ filteredArray }) {
                 )
                 .then(res => {
                   if (res.request.status === 200) {
-                    // me trae la lista de de proyectos
                     console.log(res.data);
-                    // borro TMBIEN en my asignacion de personal
                     setMyPersonel(res.data);
                     SuccesCenterTimer.fire();
                   } else {
-                    console.log("error pe chino");
+                    console.log("error");
                   }
                 });
             } else {
-              console.log("error pe chino");
+              console.log("error");
             }
           });
       }
@@ -135,7 +131,7 @@ export function Table({ filteredArray }) {
                 <td className="">
                   <button
                     type="button"
-                    className="btn btn-danger btn-sm "
+                    className="btn btn-warning btn-sm "
                     onClick={() => {
                       onDeleteProjectById(project._id);
                     }}

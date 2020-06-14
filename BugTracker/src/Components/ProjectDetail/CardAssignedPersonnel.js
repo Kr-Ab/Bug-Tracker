@@ -19,7 +19,6 @@ export default function CardAssignedPersonnel({ props }) {
         }
       )
       .then(function(res) {
-        //array de personel for this PROJECT
         setPersonelForThisProject(res.data);
         console.log(res.data);
       })
@@ -69,7 +68,6 @@ export default function CardAssignedPersonnel({ props }) {
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, personelForThisProject));
     console.log(searchedWord);
   }, [searchedWord]);
@@ -98,7 +96,7 @@ export default function CardAssignedPersonnel({ props }) {
 
   return (
     <Fade className="card">
-      <div className="card-header card-header-info">
+      <div className="card-header card-header-success">
         <h4 className="card-title ">{("Assigned Personel")} </h4>
         <p className="card-category">
           {("All your personnel for this project")}{" "}

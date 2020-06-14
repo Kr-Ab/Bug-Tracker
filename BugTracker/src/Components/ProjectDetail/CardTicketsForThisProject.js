@@ -51,7 +51,6 @@ export default function CardTicketsForThisProject({
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, listTicketsForThisProject));
     console.log(searchedWord);
   }, [searchedWord]);
@@ -69,7 +68,6 @@ export default function CardTicketsForThisProject({
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
-  // const totalPersonel = myPersonel.length;
 
   const pageNumbers = [];
 
@@ -80,7 +78,7 @@ export default function CardTicketsForThisProject({
 
   return (
     <Fade className="card">
-      <div className="card-header card-header-info">
+      <div className="card-header card-header-success">
         <h4 className="card-title "> {("Tickets for This project")} </h4>
         <p className="card-category">
           {("All your tickets for this project")}
@@ -131,13 +129,6 @@ export default function CardTicketsForThisProject({
                     <td> {ticket.status}</td>
 
                     <td> {ticket.createdAt}</td>
-                    {/* <td class="text-primary">
-                      <Link
-                        to={`myTickets/details/${ticket._id}`}
-                      >
-                        details
-                      </Link>
-                    </td> */}
                   </tr>
                 );
               })}

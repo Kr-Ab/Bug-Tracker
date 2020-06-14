@@ -59,7 +59,7 @@ export default function DemoUser({ isLogginActive, setIsLogginActive }) {
       <div className="d-flex flex-column justify-content-center">
         <div className="d-flex ">
           <button
-            className="  btn btn-warning"
+            className="  btn btn-danger"
             onClick={() => {
               loginAs("admin");
             }}
@@ -77,7 +77,7 @@ export default function DemoUser({ isLogginActive, setIsLogginActive }) {
             <h4>{("Admin")}</h4>
           </button>
           <button
-            className="btn btn-warning"
+            className="btn btn-success"
             onClick={() => {
               loginAs("manager");
             }}
@@ -96,7 +96,7 @@ export default function DemoUser({ isLogginActive, setIsLogginActive }) {
         </div>
         <div>
           <button
-            className="btn btn-warning"
+            className="btn btn-info"
             onClick={() => {
               loginAs("developer");
             }}
@@ -132,19 +132,20 @@ export default function DemoUser({ isLogginActive, setIsLogginActive }) {
           </button>
         </div>
       </div>
-      <div className="d-flex justify-content-center w-100">
-        <p className="font-italic text-light ">
-          ¿{("Have an account")}?_
+      <br></br>
+      <form className="border border-light bg-light rounded d-flex justify-content-center align-items-center" style={{width: "360px", height: "50px"}}>
+        <p className="font-italic text-dark align-self-center">
+          {("Have an account")}-
           <a
+            className=" border-bottom text-danger font-weight-bold  "
             onClick={() => {
               setIsLogginActive("login");
             }}
-            className=" border-bottom text-light  font-weight-bold"
           >
             {("Login")}
           </a>
         </p>
-      </div>
+      </form>
     </Fade>
   );
 }

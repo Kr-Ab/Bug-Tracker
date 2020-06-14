@@ -38,7 +38,6 @@ export function Search({ setFilteredArray }) {
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, myPersonel));
     console.log(searchedWord);
   }, [searchedWord]);

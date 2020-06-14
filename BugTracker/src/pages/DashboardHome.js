@@ -9,7 +9,6 @@ export default () => {
   const { user, typeUser, setTypeUser } = useContext(Context);
   const [listOfTicketsToGraph, setListOfTicketsToGraph] = useState([]);
   useEffect(() => {
-    console.log(typeUser);
     if (typeUser === "admin") {
       axios
         .get(`${backend_route}/api/admin/ticket/getListOfTickets`, {
@@ -17,8 +16,6 @@ export default () => {
         })
         .then(res => {
           if (res.request.status === 200) {
-            // console.log(listTickets);
-            // let arrayTickets = [];
             try {
               setListOfTicketsToGraph(res.data);
             } catch (error) {
@@ -26,7 +23,7 @@ export default () => {
               setListOfTicketsToGraph([]);
             }
           } else {
-            console.log("error pe chino");
+            console.log("error");
           }
         });
     } else if (typeUser === "manager") {
@@ -39,8 +36,6 @@ export default () => {
         )
         .then(res => {
           if (res.request.status === 200) {
-            // console.log(listTickets);
-            // let arrayTickets = [];
             try {
               setListOfTicketsToGraph(res.data);
             } catch (error) {
@@ -48,7 +43,7 @@ export default () => {
               setListOfTicketsToGraph([]);
             }
           } else {
-            console.log("error pe chino");
+            console.log("error");
           }
         });
     } else if (typeUser === "developer") {
@@ -61,8 +56,6 @@ export default () => {
         )
         .then(res => {
           if (res.request.status === 200) {
-            // console.log(listTickets);
-            // let arrayTickets = [];
             try {
               setListOfTicketsToGraph(res.data);
             } catch (error) {
@@ -70,7 +63,7 @@ export default () => {
               setListOfTicketsToGraph([]);
             }
           } else {
-            console.log("error pe chino");
+            console.log("error");
           }
         });
     } else if (typeUser === "submitter") {
@@ -83,8 +76,6 @@ export default () => {
         )
         .then(res => {
           if (res.request.status === 200) {
-            // console.log(listTickets);
-            // let arrayTickets = [];
             try {
               setListOfTicketsToGraph(res.data);
             } catch (error) {
@@ -92,7 +83,7 @@ export default () => {
               setListOfTicketsToGraph([]);
             }
           } else {
-            console.log("error pe chino");
+            console.log("error");
           }
         });
     }
@@ -173,7 +164,7 @@ export default () => {
       lowTickets: c4
     });
 
-    /////////////////////////// ACA LOS TYPOS
+    /////////////////////////// ALL THE TYPES
 
     let c11 = 0;
     let c22 = 0;
@@ -196,7 +187,7 @@ export default () => {
       inquiryTickets: c33
     });
 
-    /////////////////////////// ACA LOS STATUS
+    /////////////////////////// ALL THE STATUS
 
     let c111 = 0;
     let c222 = 0;
@@ -232,8 +223,8 @@ export default () => {
                 <h3> {("Tickets by Priority")}</h3>
                 <h4>{("All the tickets classify by priority")}</h4>
               </div>
-              <div className="card bg-warning">
-                <div className="card-header card-header-info ">
+              <div className="card bg-danger">
+                <div className="card-header card-header-success ">
                   <Chart
                     height={"300px"}
                     chartType="Bar"
@@ -245,7 +236,6 @@ export default () => {
                       />
                     }
                     data={[
-                      // "" para que no se agrege un titulo incesario
                       ["", "LOW", "MEDIUM", "HIGH", "URGENT"],
                       [
                         "PRIORITY",
@@ -256,22 +246,20 @@ export default () => {
                       ]
                     ]}
                     options={{
-                      // Material design options
                       chart: {},
-                      colors: ["#9E9E9E", "#2196F3", "#FF9800", "#F44336"]
+                      colors: ["#4CAF50", "#2196F3", "#FF9800", "#F44336"]
                     }}
                   ></Chart>
                 </div>
               </div>
             </div>
             <div className="col-md-6 p-3 mb-2   bg-white overflow-hidden">
-              {/* //tickets by type  DONA */}
               <div>
                 <h3>{("Tickets by Type")}</h3>
                 <h4>{("All the tickets classify by type")}</h4>
               </div>
-              <div className="card bg-warning">
-                <div className="card-header card-header-info">
+              <div className="card bg-danger">
+                <div className="card-header card-header-success">
                   <Chart
                     chartType="PieChart"
                     loader={
@@ -303,8 +291,8 @@ export default () => {
                 <h3>{("Tickets By Status")}</h3>
                 <h4>{("All the tickets classify by status")}</h4>
               </div>
-              <div className="card bg-warning">
-                <div className="card-header card-header-info">
+              <div className="card bg-danger">
+                <div className="card-header card-header-success">
                   <Chart
                     height={"300px"}
                     chartType="Bar"
@@ -326,7 +314,8 @@ export default () => {
                     ]}
                     options={{
                       chart: {},
-                      colors: ["#F44336", "#FF9800", , "#2196F3"]
+                      colors: ["#F44336", "#FF9800", , "#4CAF50"],
+                      bar : { Width : '70%' }
                     }}
                   />
                 </div>
@@ -334,13 +323,12 @@ export default () => {
             </div>
 
             <div className="col-md-6 p-3 mb-2  bg-white overflow-hidden">
-              {/* //tickets by assigned developer DONA */}
               <div>
                 <h3>{("Tickets assigned to Developers")}</h3>
                 <h4>{("All the tickets assigned to a developer")}</h4>
               </div>
-              <div className="card bg-warning">
-                <div className="card-header card-header-info">
+              <div className="card bg-danger">
+                <div className="card-header card-header-success">
                   <Chart
                     chartType="PieChart"
                     loader={

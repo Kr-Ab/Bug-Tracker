@@ -38,14 +38,13 @@ export default function Login({ setIsLogginActive }) {
     axios
       .post(`${backend_route}/api/auth/login`, data)
       .then(res => {
-        console.log("token recibido");
+        console.log("token recieved");
         activateAuth(res.data);
       })
       .catch(err => {
         LoginAlertError.fire();
         e.target.reset();
         console.log(err);
-        console.log("mierda");
       });
   };
 
@@ -58,7 +57,7 @@ export default function Login({ setIsLogginActive }) {
         </h2>
       </div>
       <form
-        className=" border border-light p-5 bg-light rounded "
+        className="border border-light p-5 bg-light rounded "
         onSubmit={handleSubmit(onSubmit)}
       >
         <p className="h4 mb-1 text-center">{("Login")}</p>
@@ -69,7 +68,7 @@ export default function Login({ setIsLogginActive }) {
             // onChange={handleInputChangeLogin}
             name="email"
             className="form-control mb-1"
-            placeholder="example33@gmail.com"
+            placeholder="example@example.com"
             ref={register({
               required: true,
               minLength: 6,
@@ -112,14 +111,14 @@ export default function Login({ setIsLogginActive }) {
           )}
         </div>
 
-        <button type="submit" className="btn btn-info btn-block my-4">
+        <button type="submit" className="btn btn-danger btn-block my-4">
           {("Login")}
         </button>
 
         <p className="font-italic text-dark d-flex justify-content-end">
-          {("Create an account")}
+          {("Create an account")}-
           <a
-            className=" border-bottom text-info font-weight-bold "
+            className=" border-bottom text-danger font-weight-bold "
             onClick={() => {
               setIsLogginActive("register");
             }}
@@ -128,9 +127,9 @@ export default function Login({ setIsLogginActive }) {
           </a>
         </p>
         <p className="font-italic text-dark d-flex justify-content-end">
-          {("Sign In As")}_
+          {("Sign In As")}-
           <a
-            className=" border-bottom text-info font-weight-bold  "
+            className=" border-bottom text-danger font-weight-bold  "
             onClick={() => {
               setIsLogginActive("demouser");
             }}

@@ -29,12 +29,11 @@ export default function AssignTicketModal() {
             setListTickets([]);
           }
         } else {
-          console.log("error pe chino");
+          console.log("error");
         }
       });
   }, []);
 
-  // quiero a los DEV QUE ESTEN ASIGNOS A LOS PROYECTO QUE YO ESTOY ASSINGANOD
 
   const [devs, setDevs] = useState([]);
 
@@ -52,7 +51,6 @@ export default function AssignTicketModal() {
       });
   }, []);
 
-  // GET LIST OF TICKETS DE LOS PROYECTOS QUE ME HAN SIDO ASIGNADOS
 
   //asign ticket to dev
 
@@ -104,7 +102,7 @@ export default function AssignTicketModal() {
       {/* <!-- Button trigger modal --> */}
       <button
         type="button"
-        class="btn btn-warning"
+        class="btn btn-info"
         data-toggle="modal"
         data-target="#exampleModal2"
       >
@@ -185,7 +183,7 @@ export default function AssignTicketModal() {
                 // onSubmit={onSubmitRegistro}
                 type="button"
                 onClick={onAssignTicketToDev}
-                class="btn btn-warning"
+                class="btn btn-success"
                 data-dismiss="modal"
               >
                 {("Assing and close")}

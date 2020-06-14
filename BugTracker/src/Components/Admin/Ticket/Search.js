@@ -43,14 +43,13 @@ export function Search({ setFilteredArray }) {
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, listTickets));
     console.log(searchedWord);
   }, [searchedWord]);
 
   return (
     <Fade className="input-group no-border w-100  d-flex flex-row-reverse">
-      <div className="input-group no-border w-50  ">
+      <div className="input-group no-border w-50">
         <input
           className="form-control"
           type="text"

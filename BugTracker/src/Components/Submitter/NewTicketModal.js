@@ -19,19 +19,16 @@ export function NewTicketModal() {
     name: "",
     description: "",
     projectId: undefined,
-    // status: "",
     type: "bug",
     priority: "low",
     imageDescription: ""
-    // file: {}
   };
   const [input, setInput] = useState(initialFormState);
   const [loading, setloading] = useState(true);
 
   const handleInputChange = event => {
     const { name, value } = event.target;
-    setInput({ ...input, [name]: value }); //anade el name y surname mas al adduser
-    // console.log(input);
+    setInput({ ...input, [name]: value });
   };
 
   useEffect(() => {
@@ -86,7 +83,7 @@ export function NewTicketModal() {
     <Fade>
       <button
         type="button"
-        class="btn btn-warning"
+        className="btn btn-danger"
         data-toggle="modal"
         data-target="#exampleModal"
       >
@@ -95,29 +92,29 @@ export function NewTicketModal() {
 
       {/* <!-- Modal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
         tabindex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="exampleModalLabel">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="modal-title" id="exampleModalLabel">
                 {("New Ticket")}
               </h4>
               <button
                 type="button"
-                class="close"
+                className="close"
                 data-dismiss="modal"
                 aria-label="Close"
               >
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
               <div>
                 <h4>{("Select project to attach")} </h4>
                 <select
@@ -145,7 +142,6 @@ export function NewTicketModal() {
 
                 <input
                   type="text"
-                  // value={registro.name}
                   name="name"
                   onChange={handleInputChange}
                   className="form-control mb-4"
@@ -155,8 +151,7 @@ export function NewTicketModal() {
                   required={true}
                   rows="4"
                   cols="50"
-                  className="form-control  mb-4   "
-                  // value={message}
+                  className="form-control  mb-4"
                   onChange={handleInputChange}
                   name="description"
                   type="text"
@@ -199,18 +194,17 @@ export function NewTicketModal() {
                 </div>
 
                 <button
-                  // onSubmit={onSubmitRegistro}
                   type="button"
                   onClick={handleCreateTicket}
-                  class="btn btn-warning"
+                  className="btn btn-success"
                   data-dismiss="modal"
                 >
                   {("Create ticket and Close")}
                 </button>
               </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">
+            <div className="modal-footer">
+              <button type="button" className="btn btn-danger" data-dismiss="modal">
                 {("Close")}
               </button>
             </div>

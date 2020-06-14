@@ -93,7 +93,7 @@ export const MyTicketsAdmin = () => {
             <h4>{("Create New Ticket")} </h4>
             <button
               type="button"
-              className="btn btn-warning"
+              className="btn btn-danger"
               data-toggle="modal"
               data-target="#exampleModal"
             >
@@ -104,11 +104,9 @@ export const MyTicketsAdmin = () => {
           <hr />
           <div>
             <h4> {("Assign Ticket to Developer")} </h4>
-
-            {/* <!-- Button trigger modal --> */}
             <button
               type="button"
-              className="btn btn-warning"
+              className="btn btn-danger"
               data-toggle="modal"
               data-target="#exampleModal2"
             >
@@ -193,7 +191,7 @@ export const MyTicketsAdmin = () => {
                       // onSubmit={onSubmitRegistro}
                       type="button"
                       onClick={onAssignTicketToDev}
-                      className="btn btn-warning"
+                      className="btn btn-success"
                       data-dismiss="modal"
                     >
                       {("Assing and close")}

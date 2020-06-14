@@ -27,7 +27,6 @@ export function Modal() {
         headers: { "auth-token": window.sessionStorage.getItem("token") }
       })
       .then(res => {
-        // me devuelve mi lista de personles
         console.log(res.data);
 
         setMyPersonel(res.data);
@@ -82,8 +81,6 @@ export function Modal() {
                 <div className=" mb-4">
                   <input
                     type="text"
-                    // value={registration.name}
-                    // onChange={handleInputChangeRegistro}
                     name="name"
                     className="form-control"
                     placeholder="Name"
@@ -106,8 +103,6 @@ export function Modal() {
                 <div className=" mb-4">
                   <input
                     type="text"
-                    // value={registration.email}
-                    // onChange={handleInputChangeRegistro}
                     name="email"
                     className="form-control"
                     placeholder="E-mail"
@@ -136,8 +131,6 @@ export function Modal() {
                 <div className=" mb-4">
                   <input
                     type="password"
-                    // value={registration.password}
-                    // onChange={handleInputChangeRegistro}
                     name="password"
                     className="form-control"
                     placeholder="Password"
@@ -163,11 +156,8 @@ export function Modal() {
                 </div>
 
                 <button
-                  // onSubmit={onSubmitRegistro}
-                  // onClick={onSubmitRegistro}
-
                   type="submit"
-                  className="btn btn-warning"
+                  className="btn btn-success"
                 >
                   {("Add Personnel")}
                 </button>

@@ -10,7 +10,6 @@ import { Modal } from "../../Components/Admin/ManageRole/Modal";
 import { ListOfUsers } from "../../Components/Admin/ManageRole/ListOfUsers";
 
 export default function ManageRoleAssignment() {
-  // const { register, handleSubmit, watch, errors } = useForm();
 
   const { myPersonel, setMyPersonel, user, isAuth } = useContext(Context);
 
@@ -49,7 +48,7 @@ export default function ManageRoleAssignment() {
         console.log(error);
         Toast.fire({
           icon: "error",
-          title: "Erro! to assign user"
+          title: "Error! to assign user"
         });
       });
   };
@@ -59,13 +58,13 @@ export default function ManageRoleAssignment() {
       <div className="content">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 card">
               <div>
                 <h4> {("Create New User or Personnel")}</h4>
                 {/* <!-- Button trigger modal --> */}
                 <button
                   type="button"
-                  className="btn btn-warning"
+                  className="btn btn-danger"
                   data-toggle="modal"
                   data-target="#exampleModal"
                 >
@@ -94,7 +93,7 @@ export default function ManageRoleAssignment() {
                   <br />
                   <button
                     onClick={handleRoleAssign}
-                    className="w-100  btn btn-warning"
+                    className="w-100  btn btn-success"
                     type="button"
                   >
                     {("Assign Role")}

@@ -16,21 +16,7 @@ export const MyProjectsAdmin = () => {
     Context
   );
 
-  // const initialFormState = {
-  //   name: "",
-  //   description: ""
-  // };
-  // const [input, setInput] = useState(initialFormState);
-
-  // const handleInputChange = event => {
-  //   const { name, value } = event.target;
-  //   setInput({ ...input, [name]: value }); //anade el name y surname mas al adduser
-  // };
-
   const onSubmit = (data, e) => {
-    // e.preventDefault();
-    // if (!input) return;
-    // setInput(initialFormState);
     e.target.reset();
     axios
       .post(`${backend_route}/api/admin/project/createProject`, data, {
@@ -39,16 +25,14 @@ export const MyProjectsAdmin = () => {
       })
       .then(res => {
         if (res.request.status === 200) {
-          console.log("proyecto creado correctamente");
           Toast.fire({
             icon: "success",
             title: "Process executed with success"
           });
-          // me trae la lista de de proyectos
           console.log(res.data);
           setListProjects(res.data);
         } else {
-          console.log("error pe chino");
+          console.log("error");
         }
       });
   };
@@ -61,7 +45,7 @@ export const MyProjectsAdmin = () => {
             <h4> {("Create New Project")} </h4>
             <button
               type="button"
-              className="btn btn-warning"
+              className="btn btn-danger"
               data-toggle="modal"
               data-target="#exampleModal"
             >
@@ -99,8 +83,6 @@ export const MyProjectsAdmin = () => {
                       <div className=" mb-4">
                         <input
                           type="text"
-                          // value={input.name}
-                          // onChange={handleInputChange}
                           name="name"
                           className="form-control"
                           placeholder="Name"
@@ -123,8 +105,6 @@ export const MyProjectsAdmin = () => {
                       <div className=" mb-4">
                         <input
                           type="text"
-                          // value={input.description}
-                          // onChange={handleInputChange}
                           name="description"
                           className="form-control "
                           placeholder="Description"
@@ -133,11 +113,7 @@ export const MyProjectsAdmin = () => {
                       </div>
 
                       <button
-                        // onSubmit={onSubmitRegistro}
-                        // onClick={onSubmit}
-                        // type="button"
-                        // data-dismiss="modal"
-                        className="btn btn-warning"
+                        className="btn btn-success"
                         type="submit"
                       >
                         {("Create project")}

@@ -9,7 +9,7 @@ export function CardPersonnel() {
   return (
     <Fade>
       <div className="card">
-        <div className="card-header card-header-info ">
+        <div className="card-header card-header-danger ">
           <h4 className="card-title ">{("Your Personnel")}</h4>
           <p className="card-category">
             {("All your personnel in your database")}

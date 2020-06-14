@@ -28,7 +28,7 @@ export default function MyProjectsSubmitter() {
             console.log(error);
           }
         } else {
-          console.log("error pe chino");
+          console.log("error");
         }
       });
   }, []);
@@ -67,7 +67,6 @@ export default function MyProjectsSubmitter() {
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, listProjects));
     console.log(searchedWord);
   }, [searchedWord]);
@@ -100,7 +99,7 @@ export default function MyProjectsSubmitter() {
         <div className="container-fluid">
           <div> {("List of projects")}</div>
           <div class="card">
-            <div class="card-header card-header-info">
+            <div class="card-header card-header-warning">
               <h4 class="card-title ">{("Your Projects")}</h4>
               <p class="card-category">
                 {("All your projects in your database")}

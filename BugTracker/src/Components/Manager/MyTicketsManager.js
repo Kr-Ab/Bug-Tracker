@@ -21,7 +21,7 @@ export default function MyTicketsManager() {
       text: "You won' be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#4caf50",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
     }).then(result => {
@@ -126,9 +126,8 @@ export default function MyTicketsManager() {
           <h4>{("Assign Ticket to Developer")} </h4>
           <AssignTicketModal></AssignTicketModal>
           <hr />
-          {/* {aca va la lista hermosa} */}
           <div class="card">
-            <div class="card-header card-header-info">
+            <div class="card-header card-header-success">
               <h4 class="card-title ">{("Your Tickets")}</h4>
               <p class="card-category">
                 {("All your Tickets in your database")}
@@ -191,7 +190,7 @@ export default function MyTicketsManager() {
                           </td>
                           <td class="text-primary">
                             <button
-                              className="btn btn-danger btn-sm"
+                              className="btn btn-warning btn-sm"
                               onClick={() => {
                                 onDeleteTicketById(ticket._id);
                               }}

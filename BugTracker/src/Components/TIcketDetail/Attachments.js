@@ -48,7 +48,6 @@ export function Attachments({ props, imagesDetail, setImagesDetail }) {
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, imagesDetail));
     // console.log(searchedWord);
   }, [searchedWord]);
@@ -66,7 +65,6 @@ export function Attachments({ props, imagesDetail, setImagesDetail }) {
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
-  // const totalPersonel = myPersonel.length;
 
   const pageNumbers = [];
 
@@ -75,15 +73,13 @@ export function Attachments({ props, imagesDetail, setImagesDetail }) {
   }
   //////////////////////////////////////////////////////
 
-  const URL_CLOUDARY = "https://api.cloudinary.com/v1_1/dv2q4mh6c/image/upload";
-  const PRESET_CLOUDINARY = "eo7isizh";
+  const URL_CLOUDARY = "https://api.cloudinary.com/v1_1/imagereactstore/image/upload";
+  const PRESET_CLOUDINARY = "i7sy3ilg";
   const onSendImage = e => {
     e.preventDefault();
     const bodyFormData = new FormData();
     bodyFormData.append("file", imageFile);
     bodyFormData.append("upload_preset", PRESET_CLOUDINARY);
-    // bodyFormData.append("imageDescription", imageDescription);
-    console.log("data enviada");
     Toast.fire({
       icon: "info",
       title: "Uploading images... one second please "
@@ -117,7 +113,6 @@ export function Attachments({ props, imagesDetail, setImagesDetail }) {
             }
           )
           .then(function(res) {
-            // me llega los detalles de ONE Proyecto
             console.log(res.data);
             // setTicketDetail(res.data);
             setImagesDetail(res.data.image);
@@ -133,8 +128,6 @@ export function Attachments({ props, imagesDetail, setImagesDetail }) {
               title: "Error! to add image "
             });
           });
-
-        // setTicketDetail(res.data);
       })
       .catch(function(error) {
         console.log(error);
@@ -155,17 +148,15 @@ export function Attachments({ props, imagesDetail, setImagesDetail }) {
   };
   const onHandleImageDescription = e => {
     setImageDescription(e.target.value);
-    // console.log(e.target.value);
   };
   return (
     <Fade>
       <div>
-        <h4> {("Add a Attachment")}?</h4>
         <form>
           <div className="form-group">
             <label htmlFor="exampleFormControlFile1">
-              <i className="material-icons">move_to_inbox</i>
-              {("Click Here")} |{("To add your images")}
+              <h4 style={{display: "inline"}}> {("Add a Attachment?  ")}</h4>
+              <i className="material-icons">move_to_inbox</i>{("Click Here to add your images")}
             </label>
             <input
               id="exampleFormControlFile1"
@@ -181,16 +172,16 @@ export function Attachments({ props, imagesDetail, setImagesDetail }) {
           onChange={onHandleImageDescription}
           className="form-control mb-4"
           placeholder="Description"
-          rows="4"
+          rows="1"
           cols="50"
         />
-        <button className="btn btn-warning" onClick={onSendImage}>
+        <button className="btn btn-info" onClick={onSendImage}>
           {("Add")}
         </button>
       </div>
 
       <div className="card">
-        <div className="card-header card-header-info">
+        <div className="card-header card-header-success">
           <h6 className="card-title ">{("Tickets Attachtment")} </h6>
           <p className="card-category">
             {("All files attached to this ticket")}
@@ -277,7 +268,7 @@ export function Attachments({ props, imagesDetail, setImagesDetail }) {
                               <div className="modal-footer">
                                 <button
                                   type="button"
-                                  className="btn btn-secondary"
+                                  className="btn btn-danger"
                                   data-dismiss="modal"
                                 >
                                   {("Close")}

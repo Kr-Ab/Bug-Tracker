@@ -34,14 +34,13 @@ export function Search({ setFilteredArray }) {
   };
 
   useEffect(() => {
-    // filtro por cada input del usuario
     setFilteredArray(itemsFiltered(searchedWord, listProjects));
     console.log(searchedWord);
   }, [searchedWord]);
 
   return (
     <Fade className="input-group no-border w-100  d-flex flex-row-reverse">
-      <div className="input-group no-border w-50  ">
+      <div className="input-group no-border w-50">
         <input
           className="form-control"
           type="text"
@@ -50,7 +49,7 @@ export function Search({ setFilteredArray }) {
           placeholder="Search"
         />
         <button type="submit" class="btn btn-white btn-round btn-just-icon">
-          <i class="material-icons">search</i>
+          <i class="material-icons">Search</i>
           <div class="ripple-container"></div>
         </button>
       </div>

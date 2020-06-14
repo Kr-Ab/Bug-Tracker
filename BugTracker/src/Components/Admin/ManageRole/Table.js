@@ -54,7 +54,7 @@ export function Table({ filteredArray }) {
       text: "You won' be able to revert this!",
       icon: "warning",
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
+      confirmButtonColor: "#4caf50",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!"
     }).then(result => {
@@ -71,7 +71,6 @@ export function Table({ filteredArray }) {
             }
           )
           .then(res => {
-            console.log("perssonel eliminado correctamente");
             console.log(res.data);
 
             axios
@@ -82,12 +81,11 @@ export function Table({ filteredArray }) {
               })
               .then(res => {
                 if (res.request.status === 200) {
-                  console.log("lista de mis personal");
                   console.log(res.data);
                   setMyPersonel(res.data);
                   SuccesCenterTimer.fire();
                 } else {
-                  console.log("error pe chino");
+                  console.log("error");
                 }
               })
               .catch(err => {
@@ -120,7 +118,7 @@ export function Table({ filteredArray }) {
                 <td>
                   <button
                     type="button"
-                    className="btn btn-danger btn-sm"
+                    className="btn btn-warning btn-sm"
                     onClick={() => {
                       onDeletePersonal(person._id);
                     }}

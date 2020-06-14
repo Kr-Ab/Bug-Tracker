@@ -16,34 +16,6 @@ export default props => {
     []
   );
 
-  //   const projectId = props.projectId;
-  //   console.log(projectId);
-
-  // LOGIC PAGINATION
-  //   const [currentPage, setCurrentPage] = useState(1);
-  //   const [postsPerPage] = useState(10);
-  //   const indexOfLastPost = currentPage * postsPerPage;
-  //   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  //   const currentTickets = projectDetail.tickets.slice(
-  //     indexOfFirstPost,
-  //     indexOfLastPost
-  //   );
-
-  //   // Change page
-  //   const paginate = pageNumber => setCurrentPage(pageNumber);
-  //   //    const totalProyects = listTickets.length;
-
-  //   const pageNumbers = [];
-
-  //   for (
-  //     let i = 1;
-  //     i <= Math.ceil(projectDetail.tickets.length / postsPerPage);
-  //     i++
-  //   ) {
-  //     pageNumbers.push(i);
-  //   }
-  /////////////////////////////////////////////////////////////////////
-
   const onNavigateToProjects = () => {
     navigate("/myProjects");
   };
@@ -75,7 +47,7 @@ export default props => {
           <div className="row">
             <div className="col-md-12">
               <div className="card">
-                <div className="card-header card-header-info">
+                <div className="card-header card-header-success">
                   <h4 className="card-title ">
                     {("Details for this project")}{" "}
                   </h4>
@@ -88,15 +60,10 @@ export default props => {
 
                     {("Back to list")}
                   </button>
-                  {/* <button>Edit</button> */}
                 </div>
                 <div className="card-body">
                   <div className="table-responsive">
                     <table className="table table-sm">
-                      {/* <thead class=" text-primary">
-                            <th>Assigned Developer</th>
-                            <th>Assigned Developer</th>
-                          </thead> */}
                       <tbody id="tbody">
                         <tr>
                           <td>

@@ -44,8 +44,6 @@ export default function ManageProjectUsers() {
 
   const handleOptionChangeProject = e => {
     setPickedProject(e.target.value);
-    // const { name, value } = e.target;
-    // setPickedProject({ ...pickedProject, [name]: value });
   };
 
   const onSubmitAssignToProject = e => {
@@ -55,7 +53,6 @@ export default function ManageProjectUsers() {
         `${backend_route}/api/admin/project/assignUsersToProject`,
         {
           projectId: pickedProject,
-          // projectName: pickedProject.projectName,
           userId: pickedPersonel
         },
         {
@@ -75,7 +72,7 @@ export default function ManageProjectUsers() {
         console.log(error);
         Toast.fire({
           icon: "error",
-          title: "Erro! to assign "
+          title: "Error! to assign "
         });
       });
   };
@@ -85,7 +82,7 @@ export default function ManageProjectUsers() {
       <div className="content">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 card">
               <form>
                 <div>
                   <h4>{("List of projects")}</h4>
@@ -136,13 +133,11 @@ export default function ManageProjectUsers() {
                 <br />
                 <button
                   onClick={onSubmitAssignToProject}
-                  className="w-100  btn btn-warning"
+                  className="w-100  btn btn-success"
                   type="submit"
                 >
                   {("Assign Project")}
                 </button>
-                {/* <input type="submit" placeholder="AssignProject" /> */}
-                {/* onSubmit={onSubmitAssignToProject} */}
               </form>
             </div>
             <div className="col-md-8">

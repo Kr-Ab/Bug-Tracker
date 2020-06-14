@@ -17,10 +17,8 @@ export function NewTicketModal() {
 
   const initialFormState = {
     name: "",
-    // submitter: "", //toma al admin no al submiter por ahora
     description: "",
     projectId: undefined,
-    // status: "",
     type: "bug",
     priority: "low",
     imageDescription: "",
@@ -30,8 +28,7 @@ export function NewTicketModal() {
 
   const handleInputChange = event => {
     const { name, value } = event.target;
-    setInput({ ...input, [name]: value }); //anade el name y surname mas al adduser
-    // console.log(input);
+    setInput({ ...input, [name]: value });
   };
 
   const handleCreateTicket = e => {
@@ -49,11 +46,7 @@ export function NewTicketModal() {
         }
       )
       .then(res => {
-        console.log("ticket creado correctamente");
-        // console.log(res.data);
-        // me llega una lista de todos los tickets
         setListTickets(res.data);
-        // setInput((initialFormState.description = ""));
 
         Toast.fire({
           icon: "success",
@@ -187,10 +180,9 @@ export function NewTicketModal() {
               </div>
 
               <button
-                // onSubmit={onSubmitRegistro}
                 type="button"
                 onClick={handleCreateTicket}
-                className="btn btn-warning"
+                className="btn btn-success"
                 data-dismiss="modal"
               >
                 {("Create ticket and Close")}

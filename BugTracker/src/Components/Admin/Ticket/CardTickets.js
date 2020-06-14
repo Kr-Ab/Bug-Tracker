@@ -9,7 +9,7 @@ export function CardTickets() {
   const [filteredArray, setFilteredArray] = useState([]);
   return (
     <Fade className="card">
-      <div className="card-header card-header-info">
+      <div className="card-header card-header-danger">
         <h4 className="card-title ">{("Your Tickets")} </h4>
         <p className="card-category">
           {" "}

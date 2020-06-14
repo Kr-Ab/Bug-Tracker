@@ -16,7 +16,7 @@ export default function Register({ isLogginActive, setIsLogginActive }) {
     axios
       .post(`${backend_route}/api/auth/register`, data)
       .then(res => {
-        console.log("registrado");
+        console.log("register");
 
         activateAuth(res.data);
         navigate(`/`);
@@ -30,16 +30,8 @@ export default function Register({ isLogginActive, setIsLogginActive }) {
   return (
     <Fade className="col-md-6 d-flex flex-column justify-content-center  align-items-center">
       <div className="text-center">
-        <h2 className="font-italic ">
+        <h2 className="font-italic " style={{color: "white"}}>
           Bug-Tracker
-          <img
-            className="ml-2"
-            src={require("./../../images/bug3.png")}
-            width={"60px"}
-            height={"60px"}
-            overflow={"hidden"}
-            alt=""
-          />
         </h2>
       </div>
       <form
@@ -51,8 +43,6 @@ export default function Register({ isLogginActive, setIsLogginActive }) {
         <div className="mb-4">
           <input
             type="text"
-            // value={registro.name}
-            // onChange={handleInputChangeRegistro}
             name="name"
             className="form-control"
             placeholder="Name"
@@ -75,8 +65,6 @@ export default function Register({ isLogginActive, setIsLogginActive }) {
         <div className="mb-4">
           <input
             type="text"
-            // value={registro.email}
-            // onChange={handleInputChangeRegistro}
             name="email"
             className="form-control "
             placeholder="E-mail"
@@ -102,8 +90,6 @@ export default function Register({ isLogginActive, setIsLogginActive }) {
         <div className="mb-4">
           <input
             type="password"
-            // value={registro.password}
-            // onChange={handleInputChangeRegistro}
             name="password"
             className="form-control "
             placeholder="Password"
@@ -128,17 +114,17 @@ export default function Register({ isLogginActive, setIsLogginActive }) {
           )}
         </div>
 
-        <button type="submit" className="btn btn-info btn-block mb-4 ">
+        <button type="submit" className="btn btn-danger btn-block mb-4 ">
           {("Sign In")}
         </button>
 
         <p className="font-italic text-dark d-flex justify-content-end">
-          ¿{("Have an account")}?_
+          {("Have an account")}-
           <a
             onClick={() => {
               setIsLogginActive("login");
             }}
-            className=" border-bottom text-info font-weight-bold  "
+            className=" border-bottom text-danger font-weight-bold  "
           >
             {("Login")}
           </a>

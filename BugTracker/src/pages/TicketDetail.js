@@ -56,11 +56,10 @@ export default props => {
           <div className="row d-flex flex-row justify-content-center">
             <div className="col-md-6 ">
               <div className="card">
-                <div className="card-header card-header-info">
+                <div className="card-header card-header-success">
                   <h4 className="card-title ">
                     {("Details for this ticket")}
                   </h4>
-                  {/* <p className="card-category">All about your ticket</p> */}
                   <button
                     onClick={onNavigateToTickets}
                     class="btn btn-link  btn-sm   text-white"
