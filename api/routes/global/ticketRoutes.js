@@ -159,7 +159,7 @@ router.post("/addCommentToTicket", verify, (req, res) => __awaiter(this, void 0,
         commenterId: req.body.commenter,
         commenterName: req.body.commenterName,
         message: req.body.message,
-        createAt: new Date().toLocaleString()
+        createAt: new Date()
     });
     let docAdmin = yield mongoose_1.Admin.findById(req.user._id);
     if (!docAdmin) {
