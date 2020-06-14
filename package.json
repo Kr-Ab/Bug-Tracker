@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node api/index",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild" : "NPM_CONFIG_PRODUCTION=false npm run install --prefix Bugtracker && npm run build --prefix Bugtracker"
+    "heroku-postbuild" : "npm run install --prefix Bugtracker && npm run build --prefix Bugtracker"
   },
   "keywords": [],
   "author": "",
