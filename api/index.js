@@ -41,7 +41,10 @@ app.use("/api/global/ticket", ticketGlobalRoutes);
 
 if (process.env.NODE_ENV === 'production')
 {
-    app.use(express.static('../BugTracker/build'));
+    app.use(express.static('BugTracker/build'));
+    app.get("*",(req,res) => {
+        res.sendFile(path.resolve(__dirname, "../BugTracker", "build", "index.html"))
+    })
 }
 
 app.listen(port, () => console.log("server Up and running: " + port));

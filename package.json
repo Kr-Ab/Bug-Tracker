@@ -6,10 +6,7 @@
   "scripts": {
     "start": "node api/index",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "cd BugTracker && npm run build",
-    "install" : "cd BugTracker && npm install",
-    "heroku-postbuild" : "npm run install && npm run build && npm run client",
-    "client" : "cd BugTracker && npm start"
+    "heroku-postbuild" : "NPM_CONFIG_PRODUCTION=false npm run install --prefix Bugtracker && npm run build --prefix Bugtracker"
   },
   "keywords": [],
   "author": "",
