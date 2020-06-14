@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node api/index",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild" : "npm run install --prefix Bugtracker && npm run build --prefix Bugtracker"
+    "heroku-postbuild" : "npm run install --prefix BugTracker && npm run build --prefix BugTracker"
   },
   "keywords": [],
   "author": "",
