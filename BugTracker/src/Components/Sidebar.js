@@ -30,7 +30,7 @@ export default () => {
     }
   };
   return (
-    <div className="sidebar" data-color="danger">
+    <div className="sidebar" data-color="orange">
       <div className="d-flex flex-row logo">
         <div className="d-flex flex-row">
           <div>

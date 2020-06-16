@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { backend_route } from "../../GlobalVariables";
 import axios from "axios";
 import { Fade } from '../../animations/fade'

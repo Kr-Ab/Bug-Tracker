@@ -3,8 +3,8 @@ import { Fade } from '../../animations/fade'
 
 export default function Wrapper(props) {
     return (
-        <Fade className="wrapper">
+        <div className="wrapper">
             {props.children}
-        </Fade>
+        </div>
     )
 }

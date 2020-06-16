@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "./../Context";
 import "./styles.css";
-import { Fade } from '../animations/fade'
 
 export default ({ isLoading }) => {
-  const { removeAuth, user } = useContext(Context);
+  const { typeUser, removeAuth } = useContext(Context);
   try {
     var btnRemoveAuth = document.getElementById("removeAuth");
     btnRemoveAuth.addEventListener("click", () => {
@@ -15,7 +14,7 @@ export default ({ isLoading }) => {
   }
 
   return (
-    <Fade>
+    <>
       <nav
         style={{ zIndex: 10 }}
         className="navbar navbar-expand-lg bg-light navbar-absolute fixed-top navbartracker mb-2 "
@@ -26,7 +25,7 @@ export default ({ isLoading }) => {
               <h5 className="text-secondary m-0">
                 {("Logged in as")} :
                 <span className="text-dark text-capitalize font-weight-normal">
-                  {user.name}
+                  {typeUser}
                 </span>
               </h5>
             </div>
@@ -50,7 +49,6 @@ export default ({ isLoading }) => {
 
           <div className="collapse navbar-collapse justify-content-end">
             <ul className="navbar-nav">
-
               <button
                 type="submit"
                 onClick={removeAuth}
@@ -63,6 +61,6 @@ export default ({ isLoading }) => {
           </div>
         </div>
       </nav>
-    </Fade>
+    </>
   );
 };

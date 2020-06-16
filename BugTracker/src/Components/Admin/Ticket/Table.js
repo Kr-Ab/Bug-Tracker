@@ -13,10 +13,6 @@ export function Table({ filteredArray }) {
 
   ////////////////////////////////////////////////////////////////////////////////////////////
   const {
-    myPersonel,
-    setMyPersonel,
-    setListProjects,
-    listProjects,
     setListTickets
   } = useContext(Context);
   ////////////////////////////////////////////////////////////////////////////////////////////
@@ -54,7 +50,7 @@ export function Table({ filteredArray }) {
             console.log(error);
           }
         } else {
-          console.log("error pe chino");
+          console.log("error");
         }
       });
   }, []);

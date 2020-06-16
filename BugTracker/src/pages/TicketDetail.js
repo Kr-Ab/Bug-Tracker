@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Context } from "./../Context";
+import React, { useState, useEffect } from "react";
 import { navigate } from "@reach/router";
 
 import axios from "axios";

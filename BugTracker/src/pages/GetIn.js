@@ -1,13 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Context } from "./../Context";
-import { navigate } from "@reach/router";
 import Login from "./../Components/GetIn/Login";
 import Register from "./../Components/GetIn/Register";
 import DemoUser from "../Components/GetIn/DemoUser";
 import styled from "styled-components";
 
 export default () => {
-  const { isAuth } = useContext(Context);
   const [isLogginActive, setIsLogginActive] = useState("login");
 
   return (

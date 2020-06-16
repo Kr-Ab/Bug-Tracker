@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Context } from "../../Context";
 import axios from "axios";
 import { Toast } from "../../animations/Alerts";
@@ -11,7 +11,7 @@ import { ListOfUsers } from "../../Components/Admin/ManageRole/ListOfUsers";
 
 export default function ManageRoleAssignment() {
 
-  const { myPersonel, setMyPersonel, user, isAuth } = useContext(Context);
+  const { setMyPersonel } = useContext(Context);
 
   /////////////////////////////////////////////////////
   const [pickedPersonel, setPickedPersonel] = useState(undefined);

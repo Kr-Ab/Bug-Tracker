@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../../Context";
 import axios from "axios";
 // Validation --------------------------------------------->
@@ -11,8 +11,8 @@ import { Fade } from '../../animations/fade'
 export const MyProjectsAdmin = () => {
 
   // Validation --------------------------------------------->
-  const { register, handleSubmit, watch, errors } = useForm();
-  const { listProjects, setListProjects, user, setMyPersonel } = useContext(
+  const { register, handleSubmit, errors } = useForm();
+  const { setListProjects } = useContext(
     Context
   );
 

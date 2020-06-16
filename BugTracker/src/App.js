@@ -21,27 +21,27 @@ import Spinner from "./utils/Spinner";
 import Wrapper from "./Components/Layout/Wrapper";
 import MainPanel from "./Components/Layout/MainPanel";
 
-// import Navbar from "./Components/Navbar";
-// import Sidebar from "./Components/Sidebar";
+import Navbar from "./Components/Navbar";
+import Sidebar from "./Components/Sidebar";
 
-const Navbar = lazy(() => import("./Components/Navbar"));
-const Sidebar = lazy(() => import("./Components/Sidebar"));
+// const Navbar = lazy(() => import("./Components/Navbar"));
+// const Sidebar = lazy(() => import("./Components/Sidebar"));
 
-const DashboardHome = lazy(() => import("./pages/DashboardHome"));
-const GetIn = lazy(() => import("./pages/GetIn"));
-const MyProjects = lazy(() => import("./pages/MyProjects"));
-const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
-const MyTickets = lazy(() => import("./pages/MyTickets"));
-const TicketDetail = lazy(() => import("./pages/TicketDetail"));
-const TicketEdit = lazy(() => import("./pages/TicketEdit"));
+// const DashboardHome = lazy(() => import("./pages/DashboardHome"));
+// const GetIn = lazy(() => import("./pages/GetIn"));
+// const MyProjects = lazy(() => import("./pages/MyProjects"));
+// const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
+// const MyTickets = lazy(() => import("./pages/MyTickets"));
+// const TicketDetail = lazy(() => import("./pages/TicketDetail"));
+// const TicketEdit = lazy(() => import("./pages/TicketEdit"));
 
-// import GetIn from "./pages/GetIn";
-// import DashboardHome from "./pages/DashboardHome";
-// import MyProjects from "./pages/Admin/MyProjects";
-// import ProjectDetail from "./pages/ProjectDetail";
-// import MyTickets from "./pages/Admin/MyTickets";
-// import TicketDetail from "./pages/TicketDetail";
-// import TicketEdit from "./pages/TicketEdit";
+import GetIn from "./pages/GetIn";
+import DashboardHome from "./pages/DashboardHome";
+import MyProjects from "./pages/MyProjects";
+import ProjectDetail from "./pages/ProjectDetail";
+import MyTickets from "./pages/MyTickets";
+import TicketDetail from "./pages/TicketDetail";
+import TicketEdit from "./pages/TicketEdit";
 
 function App(props) {
   const { isAuth, setIsAuth, setUser, setTypeUser } = useContext(
@@ -69,7 +69,7 @@ function App(props) {
             setTypeUser("manager");
             setUser(data.data);
           } else {
-            setTypeUser("normal");
+            setTypeUser("Unassigned");
             setUser(data.data);
           }
         } else {
@@ -80,7 +80,6 @@ function App(props) {
       })
       .catch(function(error) {
         console.log(error);
-        console.log("token invalido");
       });
   }, [isAuth]);
 
@@ -91,13 +90,13 @@ function App(props) {
         <MainPanel>
           <Navbar />
           <Router>
-            {isAuth && <Redirect noThrow from="/getin" to="/" />}
+            {isAuth && <Redirect noThrow from="/getin" to="/dashboard" />}
             <GetIn path="/getin" />
             {!isAuth && <Redirect noThrow from="/" to="/getin" />}
             {isLoading ? (
               <NotFound default />
             ) : (
-              <DashboardHome exact path="/" />
+              <DashboardHome exact path="/dashboard" />
             )}
             {isAuth && <ManageRoleAssignment path="/manageRole" />}
             {isAuth && <ManageProjectUsers path="/manageProject" />}

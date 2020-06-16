@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Fade } from '../../animations/fade'
 
 export default function CardTicketsForThisProject({

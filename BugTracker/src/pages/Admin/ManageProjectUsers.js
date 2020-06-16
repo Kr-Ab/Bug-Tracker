@@ -13,8 +13,7 @@ export default function ManageProjectUsers() {
     listProjects,
     setListProjects,
     myPersonel,
-    setMyPersonel,
-    user
+    setMyPersonel
   } = useContext(Context);
 
   const [pickedPersonel, setPickedPersonel] = useState(undefined);
